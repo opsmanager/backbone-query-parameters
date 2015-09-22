@@ -99,7 +99,7 @@ _.extend(Backbone.Router.prototype, {
       if (queryString) {
         var self = this;
         iterateQueryString(queryString, function(name, value) {
-          self._setParamValue(name, value, data);
+          self._setParamValue(decodeURIComponent(name), value, data);
         });
       }
       params[params.length-1] = data;
